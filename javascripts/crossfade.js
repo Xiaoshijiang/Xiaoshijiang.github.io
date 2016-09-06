@@ -5,7 +5,7 @@ $(function() {
 		if (this.src.match('_off')) {
 			$(this).addClass('df');
 			this.rollOverImg = new Image();
-			this.rollOverImg.src = this.getAttribute("src").replace("_off", "_on");;
+			this.rollOverImg.src = this.getAttribute("src").replace("_off", "_on");
 			$(this.rollOverImg).css({position:'absolute', opacity:0});
 			$(this).before(this.rollOverImg);
 			
