@@ -4,125 +4,40 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <!--<link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">-->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="javascripts/jquery-3.0.0.min.js" type="text/javascript"></script>
-    <script src="javascripts/crossfade.js" type="text/javascript"></script>
-    <script src="javascripts/main.js" type="text/javascript"></script>
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <title>Xiaoshijiang.GitHub.io by Xiaoshijiang</title>
 </head>
 
 <body class="homepage">
-    <div id="wrapper">
-        <div id="loading" style="display: none; opacity: 0;"><img src="loading.gif"></div>
-        <div id="container" style="opacity: 1;">
-            <div id="main_visual"></div>
-            <header>
-                <div class="inner">
-                    <h1 id="title1">
-                        <a href="http://xiaoshijiang.github.io/" title="Xiaoshi's'"></a>小时
-                    </h1>
-                    <ul id="gmenu">
-                        <li class="fix1">
-                            <a href="http://"><img src="images/news_on.png" class="ov" style="position: absolute; opacity: 0;">
-                                <img src="images/news_off.png" alt="NEWS" class="df"></a>
-                        </li>
-                        <li class="fix1">
-                            <a href="http://"><img src="images/code_on.png" class="ov" style="position: absolute; opacity: 0;">
-                                <img src="images/code_off.png" alt="CODE" class="df"></a>
-                        </li>
-                        <li class="fix1">
-                            <a href="http://"><img src="images/note_on.png" class="ov" style="position: absolute; opacity: 0;">
-                                <img src="images/note_off.png" alt="NOTE" class="df" style="opacity: 1;"></a>
-                        </li>
-                        <li class="fix1">
-                            <a href="http://"><img src="images/profile_on.png" class="ov" style="position: absolute; opacity: 0;">
-                                <img src="images/profile_off.png" alt="PROFILE" class="df"></a>
-                        </li>
-                        <li class="fix1">
-                            <a href="http://"><img src="images/photo_on.png" class="ov" style="position: absolute; opacity: 0;">
-                                <img src="images/photo_off.png" alt="PHOTO" class="df"></a>
-                        </li>
-                        <li class="fix1">
-                            <a href="https://"><img src="images/project_on.png" class="ov" style="position: absolute; opacity: 0;">
-                                <img src="images/project_off.png" alt="PROJECT" class="df"></a>
-                        </li>
-                    </ul>
-                    <ul id="sns">
-                        <li>
-                            <a href="http://">
-                                <img src="images/github_on.png" class="ov" style="position: absolute; opacity: 0;">
-                                <img src="images/github_off.png" alt="github" class="df">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://">
-                                <img src="images/mail_on.png" class="ov" style="position: absolute; opacity: 0;">
-                                <img src="images/mail_off.png" alt="Mail" class="df">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://">
-                                <img src="images/weibo_on.png" class="ov" style="position: absolute; opacity: 0;">
-                                <img src="images/weibo_off.png" alt="Weibo" class="df">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://">
-                                <img src="images/weixin_on.png" class="ov" style="position: absolute; opacity: 0;">
-                                <img src="images/weixin_off.png" alt="Weixin" class="df">
-                            </a>
-                        </li>
-                    </ul>
+    <embed id="vid"></embed>
+    <SCRIPT LANGUAGE="JavaScript">
+        function getvalue(name) {
+            var str = window.location.search;
+            if (str.indexOf(name) != -1) {
+                var pos_start = str.indexOf(name) + name.length + 1;
+                var pos_end = str.indexOf("?", pos_start);
+                if (pos_end == -1) {
+                    return str.substring(pos_start);
+                } else {
+                    alert("对不起这个值不存在！");
+                }
+            }
+        }
+        var id = getvalue("id");
+        if (id != null) {
+            //var tmp = document.createElement('embed');
+            var tmp = document.getElementById("vid");
+            tmp.src = "https://static-s.bilibili.com/miniloader.swf?aid=" + id + "&page=0&autoplay=1";
+            tmp.type = "application/x-shockwave-flash";
+            tmp.flashvars = "aid=" + id + "&amp;page=0&amp;autoplay=1";
+            tmp.pluginspage = "https://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash";
+            tmp.quality = "high";
+            tmp.height = document.body.scrollHeight;
+            tmp.width = document.body.scrollWidth;
+            tmp.webkitRequestFullscreen();
+        }
 
-                </div>
-            </header>
-        </div>
-        <div id="content-wrapper">
-            <div class="inner clearfix">
-                <section id="main-content">
-                    <h3>三级副标题</h3>
-
-                    <p>
-                        内容
-                    </p>
-
-                    <h3>Chess 五子棋测试</h3>
-
-
-                    <canvas id="chess" width="450px" height="450px"></canvas>
-
-
-                    <h3>小时的测试页面</h3>
-                    <h3>这里没啥好写的了</h3>
-
-                    <p>
-                        以后再扩展
-                    </p>
-
-                    <h3>邮件</h3>
-
-                    <p><a href="eyeleye@126.com" class="user-mention">eyeleye@126.com</a></p>
-                </section>
-
-                <aside id="sidebar">
-
-
-                    <p>侧边栏</p>
-                </aside>
-            </div>
-
-        </div>
-        <!--挂载五子棋的脚本-->
-        <script src="javascripts/script.js" type="text/javascript"></script>
-
+    </SCRIPT>
 </body>
 
 </html>
