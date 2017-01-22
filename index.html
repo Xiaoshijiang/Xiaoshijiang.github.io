@@ -1,43 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
     <title>Xiaoshijiang.GitHub.io by Xiaoshijiang</title>
 </head>
-
 <body class="homepage">
-    <embed id="vid"></embed>
-    <SCRIPT LANGUAGE="JavaScript">
-        function getvalue(name) {
-            var str = window.location.search;
-            if (str.indexOf(name) != -1) {
-                var pos_start = str.indexOf(name) + name.length + 1;
-                var pos_end = str.indexOf("?", pos_start);
-                if (pos_end == -1) {
-                    return str.substring(pos_start);
-                } else {
-                    alert("对不起这个值不存在！");
-                }
-            }
-        }
-        var id = getvalue("id");
-        if (id != null) {
-            //var tmp = document.createElement('embed');
-            var tmp = document.getElementById("vid");
-            tmp.src = "https://static-s.bilibili.com/miniloader.swf?aid=" + id + "&page=0&autoplay=1";
-            tmp.type = "application/x-shockwave-flash";
-            tmp.flashvars = "aid=" + id + "&amp;page=0&amp;autoplay=1";
-            tmp.pluginspage = "https://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash";
-            tmp.quality = "high";
-            tmp.height = document.body.scrollHeight;
-            tmp.width = document.body.scrollWidth;
-            tmp.webkitRequestFullscreen();
-        }
-
-    </SCRIPT>
+    <embed id="vid" hidden=false allowfullscreen=true controls="playbutton"></embed>
+    <script src="javascripts/Cinema-server.js" type="text/javascript"></script>
 </body>
-
 </html>
