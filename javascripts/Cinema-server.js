@@ -16,8 +16,14 @@ if (getvalue("type") == "bilibili") {
     var id = getvalue("id");
     var page = getvalue("page");
     if (id != null) {
-        var tmp = document.getElementById("vid");
-        tmp.src = "https://static-s.bilibili.com/miniloader.swf?aid=" + id + "&page=" + page + "&autoplay=1";
+        if (page != null) {
+            var tmp = document.getElementById("vid");
+            tmp.src = "https://static-s.bilibili.com/miniloader.swf?aid=" + id + "&page=" + page + "&autoplay=1";
+
+        } else {
+            var tmp = document.getElementById("vid");
+            tmp.src = "https://static-s.bilibili.com/miniloader.swf?aid=" + id + "&autoplay=1";
+        }
         tmp.type = "application/x-shockwave-flash";
         tmp.flashvars = "aid=" + id + "&amp;page=0&amp;autoplay=1";
         tmp.pluginspage = "https://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash";
