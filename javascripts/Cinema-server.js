@@ -1,4 +1,4 @@
-document.documentElement.style.overflowY = 'hidden';
+﻿document.documentElement.style.overflowY = 'hidden';
 document.documentElement.style.overflowX = 'hidden';
 function getvalue(name) {
     var str = window.location.search;
@@ -19,10 +19,9 @@ if (getvalue("type") == "bilibili") {
         if (page != null) {
             var tmp = document.getElementById("vid");
             tmp.src = "https://static-s.bilibili.com/miniloader.swf?aid=" + id + "&page=" + page + "&autoplay=1";
-
         } else {
             var tmp = document.getElementById("vid");
-            tmp.src = "https://static-s.bilibili.com/miniloader.swf?aid=" + id + "&autoplay=1";
+            tmp.src = "https://static-s.bilibili.com/miniloader.swf?aid=" + "24542809" + "&autoplay=1";
         }
         tmp.type = "application/x-shockwave-flash";
         tmp.flashvars = "aid=" + id + "&amp;page=0&amp;autoplay=1";
